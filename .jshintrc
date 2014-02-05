@@ -1,24 +1,20 @@
 {
-  "node": true,
-  "browser": true,
-  "esnext": true,
+  "globals": {
+    "module": true,
+    "define": true,
+    "requirejs": true,
+    "require": true
+  },
   "bitwise": true,
-  "camelcase": true,
   "curly": true,
   "eqeqeq": true,
+  "freeze": true,
   "immed": true,
   "indent": 2,
   "latedef": true,
   "newcap": true,
-  "noarg": true,
-  "quotmark": "single",
-  "regexp": true,
-  "undef": true,
-  "unused": true,
-  "strict": true,
+  "noempty": true,
   "trailing": true,
-  "smarttabs": true,
-  "globals": {
-    "angular": false
-  }
+  "undef": true,
+  "unused": "vars"
 }
