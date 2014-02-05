@@ -1,0 +1,237 @@
+<div class="container">
+  <h1 class="page-header">Add a Listing</h1>
+
+  <form role="form" class="row">
+
+    <div class="col-sm-6">
+      <h3 class="page-header">Basic Information</h3>
+
+      <div class="form-group">
+        <label for="title">Title <span class="text-danger">*</span></label>
+         <input
+          type="text"
+          class="form-control"
+          name="title"
+          ng-model="listing.title"
+          placeholder="My Concert"
+          ng-required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+         <input
+          type="text"
+          class="form-control"
+          name="description"
+          ng-model="listing.description"
+          placeholder="A collection of music from 1600-1800">
+      </div>
+
+      <div class="form-group">
+        <label for="programmeNotes">Programme notes</label>
+         <textarea
+          type="text"
+          class="form-control"
+          name="programmeNotes"
+          ng-model="listing.programmeNotes"
+          placeholder="Mozart Concerto No. 13 and other Classical works"></textarea>
+      </div>
+
+      <div class="form-group">
+        <h3 class="page-header">Ticketing</h3>
+      </div>
+
+      <div class="row">
+
+        <div class="form-group col-lg-4">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="pwyc" ng-model="listing.pwyc"> Pay what you can
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="free" ng-model="listing.free"> Free
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group col-lg-4">
+          <label for="ticketPrice" ng-class="{'text-muted': listing.pwyc || listing.free }">Standard ticket price</label>
+           <input
+            type="text"
+            class="form-control"
+            name="ticketPrice"
+            ng-model="listing.ticketPrice"
+            placeholder="$40"
+            ng-disabled="listing.pwyc || listing.free">
+        </div>
+
+        <div class="form-group col-lg-4">
+          <label for="ticketSpecialPrice" ng-class="{'text-muted': listing.pwyc || listing.free }">Special ticket price</label>
+           <input
+            type="text"
+            class="form-control"
+            name="ticketSpecialPrice"
+            ng-model="listing.ticketSpecialPrice"
+            placeholder="$25 students/seniors"
+            ng-disabled="listing.pwyc || listing.free">
+        </div>
+
+        <div class="form-group offst-lg-4 col-lg-8">
+          <label for="phoneNumber">Phone number</label>
+           <input
+            type="text"
+            class="form-control"
+            name="phoneNumber"
+            ng-model="listing.phoneNumber"
+            placeholder="647-293-8322">
+        </div>
+      </div>
+
+    </div>
+    <!-- basic -->
+
+ <!--    <div class="col-sm-12">
+      <h3 class="page-header">Performers</h3>
+    </div>
+
+    <div class="form-group col-sm-12">
+      <div class="row">
+        <label class="col-xs-6 col-sm-8">Performer/Ensemble</label>
+        <label class="col-xs-6 col-sm-4">Instrument</label>
+      </div>
+      <div class="row">
+        <div class="form-group col-xs-6 col-sm-8">
+          <input
+           type="text"
+           class="form-control"
+           name="performer.name"
+           ng-model="performer.name">
+        </div>
+        <div class="form-group col-xs-6 col-sm-4">
+          <input
+          type="text"
+          class="form-control"
+          name="performer.instrument"
+          ng-model="performer.instrument"
+          typeahead="instrument for instrument in instruments | filter:$viewValue | limitTo:8">
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary"><span class="fa fa-plus"></span> Add performer/ensemble</button>
+      </div>
+    </div> -->
+
+    <div class="col-sm-5 col-sm-offset-1">
+      <h3 class="page-header">Date, Location</h3>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="date">Date <span class="text-danger">*</span></label>
+          <p class="input-group">
+             <input
+              type="text"
+              class="form-control"
+              show-weeks="false"
+              datepicker-popup="MMMM dd yyyy"
+              min="today"
+              ng-model="listing.date"
+              is-open="opened.date"
+              close-text="close"
+              ng-required>
+             <span class="input-group-btn">
+               <button class="btn btn-default" ng-click="open($event, 'date')"><i class="fa fa-calendar"></i></button>
+             </span>
+           </p>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="time">Time <span class="text-danger">*</span></label>
+            <table>
+             <tbody>
+               <tr>
+                 <td style="width:50px;" class="form-group">
+                   <input type="text" ng-model="time.hours" class="form-control text-center" maxlength="2">
+                 </td>
+                 <td>:</td>
+                 <td style="width:50px;" class="form-group">
+                   <input type="text" ng-model="time.minutes" class="form-control text-center" maxlength="2">
+                 </td>
+                 <td>
+                   <button ng-show="time.isPM" class="btn btn-default" ng-click="time.isPM = false">PM</button>
+                   <button ng-hide="time.isPM" class="btn btn-default" ng-click="time.isPM = true">AM</button>
+                 </td>
+               </tr>
+             </tbody>
+            </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-sm-12">
+          <label for="venue">Venue</label>
+           <input
+            type="text"
+            class="form-control"
+            name="venue"
+            ng-model="listing.venue"
+            placeholder="Roy Thompson Hall">
+        </div>
+        <div class="form-group col-sm-12">
+          <label for="programme">Address</label>
+           <input
+            type="text"
+            class="form-control"
+            name="address"
+            ng-model="listing.address"
+            placeholder="12 John Street">
+        </div>
+        <div class="form-group col-sm-12">
+          <google-map center='map.center' zoom='map.zoom' draggable='true'>
+            <marker coords='map.center'></marker>
+          </google-map>
+        </div>
+      </div>
+
+    </div> <!-- date location -->
+
+
+    <h3 class="page-header">
+    Confirmation
+    </h3>
+
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="contactName">Your name</label>
+         <input
+          type="text"
+          class="form-control"
+          name="contactName"
+          ng-model="contactName">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="email">Your email <span class="text-danger">*</span></label>
+        <p ng-show="user.email" class="input-group">
+           <input
+            type="text"
+            readonly
+            class="form-control"
+            name="email"
+            ng-model="user.email"
+            ng-required>
+            <span class="input-group-btn">
+              <button ng-click="login()" class="btn btn-info"><span class="fa fa-pencil"></span></button>
+            </span>
+        </p>
+        <p ng-hide="user.email">
+          <button ng-click="login()" class="btn btn-info"><span class="fa fa-lock"></span> Login</button>
+        </p>
+      </div>
+      <div class="form-group col-xs-12">
+        <button ng-click="submit()" class="btn btn-primary btn-lg">Create my listing</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>

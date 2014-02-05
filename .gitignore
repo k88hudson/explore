@@ -1,0 +1,4 @@
+node_modules
+app/bower_components
+.DS_Store
+app/compiled
