@@ -31,7 +31,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-shell-spawn');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', [ 'less', 'shell:runServer', 'watch']);
-
+  grunt.registerTask('default', ['less', 'shell:runServer', 'watch']);
 
 };
