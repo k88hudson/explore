@@ -158,7 +158,10 @@ angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap'])
   .run(['$rootScope',
     function ($rootScope) {
       $rootScope.$on('$locationChangeSuccess', function (event) {
-        document.querySelector('[ng-view]').scrollTo(0, 0);
+        var ngView = document.querySelector('[ng-view]');
+        if (ngView) {
+          ngView.scrollTop = 0;
+        }
       });
     }
   ]);

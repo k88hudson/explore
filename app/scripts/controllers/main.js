@@ -15,4 +15,7 @@ angular.module('exploreApp')
     $scope.skill = SITE.skills.filter(function(item) {
       return Slug.slugify(item.name) == $routeParams.id;
     })[0];
+  })
+  .controller('eventsController', function($scope) {
+    //blah
   });
