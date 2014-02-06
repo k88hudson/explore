@@ -20,7 +20,7 @@ angular
   .controller('mainController', function ($scope) {
 
   })
-  .controller('competencyController', function ($scope, $location, $routeParams, Slug, SITE) {
+  .controller('competencyController', function ($scope, $location, $routeParams, Slug, makeapi, SITE) {
 
     $scope.slug = $routeParams.id;
 
@@ -31,8 +31,12 @@ angular
     $scope.kits = SITE.kits[$scope.slug];
 
     $scope.mentors = SITE.mentors;
-    console.log($scope.mentors);
 
+    makeapi
+      .tags([$scope.slug])
+      .then(function(data) {
+        $scope.makes = data;
+      });
 
   })
   .controller('eventsController', function ($scope) {

@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap'])
+angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap', 'exploreApp.services'])
   .constant('SERVICE', {
-    url: 'http://c-directory-service.herokuapp.com'
-    //url: 'http://localhost:7878'
+    url: 'http://c-directory-service.herokuapp.com',
+    makeapiUrl: 'https://makeapi.webmaker.org'
   })
   .constant('SITE', {
     skills: [{
@@ -92,7 +92,7 @@ angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap'])
       {
         name: 'Matt Thompson',
         avatar: 'img/openmatt.jpg',
-        title: 'Story Teller',
+        title: 'Master Story Teller',
         handle: '@openmatt'
       },
     ]
