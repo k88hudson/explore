@@ -192,6 +192,8 @@ img {
 
   .img-mentor-avatar {
     width: 100%;
+    -webkit-transform: scale(0.9);
+    -webkit-transition: all 150ms ease-in;
   }
   .laurel {
     position: absolute;
@@ -199,6 +201,7 @@ img {
     width: 50%;
     -webkit-transition: all 200ms ease-in;
     opacity: 0;
+    z-index: 1;
 
     &.laurel-left {
       left: 0;
@@ -224,6 +227,9 @@ img {
     }
     .laurel-right {
       right: -5px;
+    }
+    .img-mentor-avatar {
+      -webkit-transform: scale(1);
     }
   }
 
