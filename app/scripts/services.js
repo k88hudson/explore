@@ -20,7 +20,7 @@ angular
           var deferred = $q.defer();
           makeapi
             .sortByField('likes')
-            .limit(10)
+            .limit(5)
             .find({
               tags: [{tags: tags}],
               orderBy: 'likes'
