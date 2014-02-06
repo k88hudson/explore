@@ -8,7 +8,7 @@
 <div class="container">
 
   <div class="peoples">
-    <h2 class="page-header">Mentors</h2>
+    <h2 class="page-header">Featured Mentors</h2>
 
     <div class="row">
 
@@ -31,47 +31,33 @@
       </div>
 
       <div class="col-sm-3">
-        <img src="http://www.fillmurray.com/110/110" alt="Person" class="img-circle">
-        <p>Bull Murray<br>
-        <span class='text-muted'>Space wrangler</span></p>
+        <div class="mentor-circle-btn">
+          Nominate
+        </div>
       </div>
 
     </div>
 
   </div>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <h2 class="page-header">Kits</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-  </div>
-
-  <div ng-controller="eventsController">
-    <h2 class="page-header">Events</h2>
-  </div>
-
 </div>
+
+
+<div ng-hide="kits.length" class="well well-create-kit text-center">
+  <div class="container">
+
+    <button class="btn btn-primary btn-create-kit"><span class="fa fa-plus"></span></button>
+    <p class="text-muted">There are no kits yet. <a href="#">submit some</a>!</p>
+  </div>
+</div>
+
+<div ng-show="kits.length" class="container">
+  <button class="pull-right btn btn-primary">
+    <span class="fa fa-plus"></span> Add a kit
+  </button>
+</div>
+
+<div class="container" ng-controller="eventsController">
+  <h2 class="page-header">Events</h2>
+</div>
+
