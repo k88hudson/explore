@@ -2,6 +2,11 @@
 
 angular
   .module('exploreApp.services', [])
+  .filter('decodeURI', function() {
+    return function(input) {
+      return decodeURIComponent(input);
+    };
+  })
   .factory('makeapi', ['$q', 'SERVICE',
     function($q, SERVICE) {
 
