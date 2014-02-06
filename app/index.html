@@ -45,7 +45,7 @@
     </nav>
 
     <div class="explore-sidebar">
-      <ul ng-cloak class="explore-sidebar-nav nav nav-stacked">
+      <ul ng-cloak ng-class="{ unselected: isUnselected() }" class="explore-sidebar-nav nav nav-stacked">
         <li
           ng-repeat="skill in skills"
           ng-class="{ active : isActive(skill.name) }"
