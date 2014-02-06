@@ -25,6 +25,34 @@ img {
 // Gallery
 @thumbnail-border: #DDD;
 
+.thumbnail {
+  .badge {
+    font-weight: normal;
+    background: @brand-primary;
+    margin-right: 3px;
+    opacity: 0.5;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.thumbnail-horizontal {
+  @media screen and (min-width: @screen-xs) {
+    padding: @grid-gutter-width;
+  }
+  .icon {
+    float: left;
+    color: #DDD;
+    font-size: 20px;
+    margin-top: 10px;
+    @media screen and (min-width: @screen-xs) {
+      font-size: 60px;
+      margin-top: 0;
+    }
+  }
+}
+
 /*********************************************************
 * Base
 */
@@ -181,9 +209,9 @@ img {
   margin: 30px 0;
 }
 
-.gallery .page-header {
-  color: darken(#E3EAEE, 45%);
-  border-bottom-color: darken(#E3EAEE, 5%);
+// Tabs
+.tab-pane .row {
+  margin-top: @grid-gutter-width;
 }
 
 .mentor {

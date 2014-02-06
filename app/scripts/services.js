@@ -19,8 +19,11 @@ angular
         tags: function(tags, callback) {
           var deferred = $q.defer();
           makeapi
+            .sortByField('likes')
+            .limit(10)
             .find({
-              tags: [{tags: tags}]
+              tags: [{tags: tags}],
+              orderBy: 'likes'
             })
             .then(function(err, makes) {
                if (err) {

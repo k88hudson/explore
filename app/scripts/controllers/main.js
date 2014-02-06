@@ -36,6 +36,7 @@ angular
       .tags([$scope.slug])
       .then(function(data) {
         $scope.makes = data;
+        console.log(data[0]);
       });
 
   })
