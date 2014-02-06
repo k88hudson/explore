@@ -1,10 +1,13 @@
 {
   "globals": {
-    "module": true,
-    "define": true,
-    "requirejs": true,
-    "require": true
+    "module": false,
+    "define": false,
+    "requirejs": false,
+    "require": false,
+    "angular": false,
+    "console": false
   },
+  "browser": true,
   "bitwise": true,
   "curly": true,
   "eqeqeq": true,
