@@ -84,7 +84,27 @@
 
 </div>
 
-<div class="container" ng-controller="eventsController">
-  <h2 class="page-header">Events</h2>
-</div>
+<div class="container">
+  <div ng-controller="eventsController" class="row">
+    <div class="col-xs-12">
+      <h2 class="page-header">Related Events</h2>
+    </div>
 
+    <div class="event" ng-repeat="event in events">
+      <h3 class="col-xs-12"><a href="#EVENT_URL_IN_WEBMAKER_EVENTS" target="_blank">{{ event.title }}</a></h3>
+      <p class="col-xs-12"><strong><a href="#GOOGLE_MAP_LINK" target="_blank">{{ event.address }}</a></strong></p>
+
+      <p class="col-xs-6">{{ event.beginDate }} - {{ event.endDate }}</p>
+      <p ex-shorten class="col-xs-12">{{ event.description }}</p>
+
+      <div class="col-xs-6">
+        <p>Organized by:</p>
+        <p><a href="#">{{ event.organizerId }}</a></p>
+      </div>
+
+      <div class="col-xs-6">
+        <a class="btn btn-primary pull-right" href="{{ event.registerLink }}">Register Now</a>
+      </div>
+    </div>
+  </div>
+</div>
