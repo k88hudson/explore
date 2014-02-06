@@ -8,68 +8,81 @@
 <div class="container">
 
   <div class="peoples">
-    <h2 class="page-header">Mentors</h2>
+    <h2 class="page-header">Featured Mentors</h2>
+
+    <div class="row text-center">
+
+      <div ng-repeat="mentor in mentors" class="col-sm-3">
+        <img ng-src="{{mentor.avatar}}" alt="{{mentor.name}}" class="img-circle img-mentor-avatar">
+        <p>{{mentor.name}}<br>
+        <span class="text-muted">{{mentor.title}}</span></p>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="mentor-circle-btn">
+          Nominate
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div ng-hide="kits.length" class="well well-create-kit text-center">
+  <div class="container">
+
+    <button class="btn btn-primary btn-create-kit"><span class="fa fa-plus"></span></button>
+    <p class="text-muted">There are no kits yet. <a href="#">submit some</a>!</p>
+  </div>
+</div>
+
+<div ng-show="kits.length">
+
+  <div class="container">
+
+    <h2 class="page-header">Kits</h2>
 
     <div class="row">
-
-      <div class="col-sm-3">
-        <img src="http://www.fillmurray.com/110/110" alt="Person" class="img-circle">
-        <p>Bull Murray<br>
-        <span class='text-muted'>Space wrangler</span></p>
+      <div ng-repeat="kit in kits" class="col-md-4 col-lg-3">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>{{kit.title}}</h3>
+            <p class="text-muted">Created by <a href="{{kit.authorUrl}}">{{kit.author}}</a></p>
+            <p class="text-muted">{{kit.description}}</p>
+            <p class="text-primary">
+              <span class="fa fa-check"></span> 34 Endorsements
+            </p>
+          </div>
+        </div>
       </div>
-
-      <div class="col-sm-3">
-        <img src="http://www.fillmurray.com/110/110" alt="Person" class="img-circle">
-        <p>Bull Murray<br>
-        <span class='text-muted'>Space wrangler</span></p>
-      </div>
-
-      <div class="col-sm-3">
-        <img src="http://www.fillmurray.com/110/110" alt="Person" class="img-circle">
-        <p>Bull Murray<br>
-        <span class='text-muted'>Space wrangler</span></p>
-      </div>
-
-      <div class="col-sm-3">
-        <img src="http://www.fillmurray.com/110/110" alt="Person" class="img-circle">
-        <p>Bull Murray<br>
-        <span class='text-muted'>Space wrangler</span></p>
-      </div>
-
     </div>
 
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <h2 class="page-header">Kits</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="row">
+      <div ng-repeat="kit in makes" class="col-md-4 col-lg-3">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3>{{kit.title}}</h3>
+            <p class="text-muted">Created by <a href="{{kit.author}}">{{kit.username}}</a></p>
+            <p class="text-muted">{{kit.description}}</p>
+            <p class="text-primary">
+              <span class="fa fa-check"></span> 34 Endorsements
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <p><button class="pull-right btn btn-primary">
+      <span class="fa fa-plus"></span> Add a kit
+    </button></p>
   </div>
 
+</div>
+
+<div class="container">
   <div ng-controller="eventsController" class="row">
     <div class="col-xs-12">
       <h2 class="page-header">Related Events</h2>
@@ -91,7 +104,5 @@
         <a class="btn btn-primary pull-right" href="{{ event.registerLink }}">Register Now</a>
       </div>
     </div>
-
   </div>
-
 </div>

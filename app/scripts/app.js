@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap'])
+angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap', 'exploreApp.services'])
   .constant('SERVICE', {
-    url: 'http://c-directory-service.herokuapp.com'
-    //url: 'http://localhost:7878'
+    url: 'http://c-directory-service.herokuapp.com',
+    makeapiUrl: 'https://makeapi.webmaker.org'
   })
   .constant('SITE', {
     skills: [{
@@ -13,44 +13,89 @@ angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap'])
     }, {
       name: 'Web Mechanics',
       colour: '#ff6969',
-      description: 'Some bullshit bullshit'
+      description: 'Understanding the web ecosystem'
     }, {
       name: 'Search',
-      colour: '#fe4040'
+      colour: '#fe4040',
+      description: 'Locating information, people and resources via the web'
     }, {
       name: 'Credibility',
-      colour: '#ff5984'
+      colour: '#ff5984',
+      description: 'Critically evaluating information found on the web'
     }, {
       name: 'Security',
-      colour: '#ff004e'
+      colour: '#ff004e',
+      description: 'Keeping systems, identities, and content safe'
     }, {
       name: 'Composing for the web',
-      colour: '#01bc85'
+      colour: '#01bc85',
+      description: 'Creating and curating content for the web'
     }, {
       name: 'Remixing',
-      colour: '#00ceb8'
+      colour: '#00ceb8',
+      description: 'Modifying existing web resources to create something new'
     }, {
       name: 'Design and Accessibility',
-      colour: '#6ecba9'
+      colour: '#6ecba9',
+      description: 'Creating universally effective communications through web resources'
     }, {
       name: 'Coding and scripting',
-      colour: '#00967f'
+      colour: '#00967f',
+      description: 'Creating interactive experiences on the web'
     }, {
       name: 'Infrastructure',
-      colour: '#09b773'
+      colour: '#09b773',
+      description: 'Understanding the Internet stack'
     }, {
       name: 'Sharing and Collaborating',
-      colour: '#739ab1'
+      colour: '#739ab1',
+      description: 'Jointly creating and providing access to web resources'
     }, {
       name: 'Community Participation',
-      colour: '#63cfea'
+      colour: '#63cfea',
+      description: 'Getting involved in web communities and understanding their practices'
     }, {
       name: 'Privacy',
-      colour: '#00bad6'
+      colour: '#00bad6',
+      description: 'Examining the consequences of sharing data online'
     }, {
       name: 'Open Practices',
-      colour: '#0097d6'
-    }]
+      colour: '#0097d6',
+      description: 'Helping to keep the web democratic and universally accessible'
+    }],
+    kits: {
+      'navigation': [{
+        title: 'What is a URL?',
+        description: 'An introduction to the structure of URLs and finding resources on the well',
+        author: '@secretrobotron',
+        authorUrl: 'https://twitter.com/secretrobotron'
+      }, {
+        title: 'Finding and using links',
+        description: 'Find links on a web page using Watson and learn how to evaluate them',
+        author: '@secretrobotron',
+        authorUrl: 'https://twitter.com/secretrobotron'
+      }]
+    },
+    mentors: [
+      {
+        name: 'Brett Gaylor',
+        avatar: 'img/brett.jpg',
+        title: 'Director of Webmaker, Filmmaker',
+        handle: '@brett'
+      },
+      {
+        name: 'Laura Hilliger',
+        avatar: 'img/laura.jpg',
+        title: 'Curriculum Lead, Webmaker',
+        handle: '@epilepticrabbit'
+      },
+      {
+        name: 'Matt Thompson',
+        avatar: 'img/openmatt.jpg',
+        title: 'Master Story Teller',
+        handle: '@openmatt'
+      },
+    ]
   })
   .config(function($routeProvider) {
     $routeProvider
@@ -160,8 +205,8 @@ angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap'])
     }
   ])
   .run(['$rootScope',
-    function ($rootScope) {
-      $rootScope.$on('$locationChangeSuccess', function (event) {
+    function($rootScope) {
+      $rootScope.$on('$locationChangeSuccess', function(event) {
         var ngView = document.querySelector('[ng-view]');
         if (ngView) {
           ngView.scrollTop = 0;

@@ -8,7 +8,8 @@
     "angular-ui": "0.4.0",
     "angular-bootstrap": "0.10.0",
     "angular-route": "1.2.10",
-    "angular-slugify": "1.0.0"
+    "angular-slugify": "1.0.0",
+    "makeapi-client": "mozilla/makeapi-client"
   },
   "devDependencies": {
     "angular-mocks": "1.0.7",

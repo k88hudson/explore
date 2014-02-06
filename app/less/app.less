@@ -14,6 +14,9 @@
 @container-desktop:            ((940px + @grid-gutter-width) - @explore-sidebar-width);
 @container-large-desktop:      ((1140px + @grid-gutter-width) - @explore-sidebar-width);
 
+// Gallery
+@thumbnail-border: #DDD;
+
 /*********************************************************
 * Base
 */
@@ -40,8 +43,8 @@
 }
 
 .section-header {
-  padding-bottom: 9px;
-  margin: 20px 0 10px;
+  .page-header;
+  border-bottom: none;
 }
 
 /*********************************************************
@@ -118,10 +121,53 @@
 * Main
 */
 
+.img-mentor-avatar {
+  width: 110px;
+  height: 110px;
+}
+
 .explore-main {
   height: 100%;
   overflow: auto;
   min-width: 67%;
+}
+
+.mentor-circle-btn {
+  background: @brand-primary;
+  width: 110px;
+  height: 110px;
+  line-height: 110px;
+  border-radius: 110px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  &:hover {
+    background: lighten(@brand-primary, 10%)
+  }
+}
+
+.btn-create-kit {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 20px;
+  padding: 0;
+  margin-bottom: 15px;
+  border: 1px dashed darken(@brand-primary, 20%);
+}
+
+.well-create-kit {
+  box-shadow: none;
+  padding: 40px;
+  margin: 30px 0;
+}
+
+.gallery .page-header {
+  color: darken(#E3EAEE, 45%);
+  border-bottom-color: darken(#E3EAEE, 5%);
 }
 
 /*********************************************************
