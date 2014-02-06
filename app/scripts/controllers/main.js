@@ -26,7 +26,26 @@ angular
     })[0];
   })
   .controller('eventsController', function ($scope) {
-    //blah
+    var request = new XMLHttpRequest();
+
+    request.open('GET', '/json/events-mock.json', true);
+
+    request.onload = function (data) {
+      data = JSON.parse(request.responseText);
+      data = data.events;
+
+      var startPoint = Math.floor(Math.random() * (data.length - 3));
+
+      $scope.events = data.slice(startPoint, startPoint + 3);
+      $scope.$apply();
+    };
+
+    request.onerror = function () {
+      console.error('JSON fetch failed.');
+    };
+
+    request.send();
+
   })
   .controller('addController', function ($scope) {
     //blah
