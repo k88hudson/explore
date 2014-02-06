@@ -157,7 +157,7 @@ img {
     text-align: center;
     padding: 15px;
     margin-left: -15px;
-    margin-top: -1.5em;
+    margin-top: -1.75em;
   }
 
   img {
@@ -197,13 +197,31 @@ img {
     position: absolute;
     top: -5px;
     width: 50%;
+    -webkit-transition: all 200ms ease-in;
+    opacity: 0;
 
     &.laurel-left {
       left: 0;
-      -webkit-transform: scaleX(-1);
+      -webkit-transform: rotate(90deg);
     }
     &.laurel-right {
-      left: 50%;
+      right: 0;
+      -webkit-transform: rotate(-90deg);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .laurel {
+      -webkit-transform: rotate(0);
+      opacity: 1;
+    }
+    .laurel-left {
+      left: -5px;
+    }
+    .laurel-right {
+      right: -5px;
     }
   }
 
