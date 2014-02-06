@@ -75,7 +75,27 @@ angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap'])
         author: '@secretrobotron',
         authorUrl: 'https://twitter.com/secretrobotron'
       }]
-    }
+    },
+    mentors: [
+      {
+        name: 'Brett Gaylor',
+        avatar: 'img/brett.jpg',
+        title: 'Director of Webmaker, Filmmaker',
+        handle: '@brett'
+      },
+      {
+        name: 'Laura Hilliger',
+        avatar: 'img/laura.jpg',
+        title: 'Curriculum Lead, Webmaker',
+        handle: '@epilepticrabbit'
+      },
+      {
+        name: 'Matt Thompson',
+        avatar: 'img/openmatt.jpg',
+        title: 'Story Teller',
+        handle: '@openmatt'
+      },
+    ]
   })
   .config(function($routeProvider) {
     $routeProvider

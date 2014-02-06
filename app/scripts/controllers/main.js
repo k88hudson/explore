@@ -30,6 +30,9 @@ angular
 
     $scope.kits = SITE.kits[$scope.slug];
 
+    $scope.mentors = SITE.mentors;
+    console.log($scope.mentors);
+
 
   })
   .controller('eventsController', function ($scope) {
