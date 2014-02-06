@@ -1,6 +1,14 @@
 @import "../bower_components/makerstrap/less/makerstrap.less";
 
 /*********************************************************
+* Resets
+*/
+
+img {
+  max-width: 100%;
+}
+
+/*********************************************************
 * Variables
 */
 
@@ -121,11 +129,6 @@
 * Main
 */
 
-.img-mentor-avatar {
-  width: 110px;
-  height: 110px;
-}
-
 .explore-main {
   height: 100%;
   overflow: auto;
@@ -134,18 +137,31 @@
 
 .mentor-circle-btn {
   background: @brand-primary;
-  width: 110px;
-  height: 110px;
-  line-height: 110px;
-  border-radius: 110px;
+  border-radius: 50%;
   color: white;
   text-align: center;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.1em;
   cursor: pointer;
+
   &:hover {
     background: lighten(@brand-primary, 10%)
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    margin-left: -15px;
+    margin-top: -1.5em;
+  }
+
+  img {
+    visibility: hidden;
   }
 }
 
@@ -169,6 +185,32 @@
   color: darken(#E3EAEE, 45%);
   border-bottom-color: darken(#E3EAEE, 5%);
 }
+
+.mentor {
+  display: block;
+  overflow: hidden;
+
+  .img-mentor-avatar {
+    width: 100%;
+  }
+  .laurel {
+    position: absolute;
+    top: -5px;
+    width: 50%;
+
+    &.laurel-left {
+      left: 0;
+      -webkit-transform: scaleX(-1);
+    }
+    &.laurel-right {
+      left: 50%;
+    }
+  }
+
+  margin-bottom: 20px;
+}
+
+
 
 /*********************************************************
 * Add
