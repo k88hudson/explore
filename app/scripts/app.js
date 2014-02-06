@@ -90,11 +90,11 @@ angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap', 'exploreAp
         handle: '@epilepticrabbit'
       },
       {
-        name: 'Matt Thompson',
-        avatar: 'img/openmatt.jpg',
+        name: 'Gavin Suntop',
+        avatar: 'img/gvn.jpg',
         gif: 'https://wmprofile-service-production.s3.amazonaws.com/gifs/ZAGFs14aDMiCRhICFSKqF7ft.gif',
-        title: 'Master Story Teller',
-        handle: '@openmatt'
+        title: 'Code dude',
+        handle: '@gvn'
       }
     ]
   })

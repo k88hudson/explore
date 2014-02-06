@@ -200,7 +200,8 @@ img {
   font-size: 20px;
   padding: 0;
   margin-bottom: 15px;
-  border: 1px dashed darken(@brand-primary, 20%);
+  border: 1px dashed #999;
+  color: #999;
 }
 
 .well-create-kit {
@@ -216,18 +217,18 @@ img {
 
 .mentor {
   display: block;
-  overflow: hidden;
+  position: relative;
 
   .img-mentor-avatar {
     width: 100%;
     -webkit-transform: scale(0.9);
-    -webkit-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
   }
   .laurel {
     position: absolute;
     top: -5px;
-    width: 50%;
-    -webkit-transition: all 200ms ease-in;
+    width: 60%;
+    transition: all 200ms ease-in;
     opacity: 0;
     z-index: 1;
 
@@ -243,6 +244,19 @@ img {
     }
   }
 
+  .mentor-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: 200%;
+    opacity: 0;
+    background-position: center;
+    background-size: cover;
+  }
+
   &:hover {
     cursor: pointer;
 
@@ -251,13 +265,16 @@ img {
       opacity: 1;
     }
     .laurel-left {
-      left: -5px;
+      left: -15px;
     }
     .laurel-right {
-      right: -5px;
+      right: -15px;
     }
     .img-mentor-avatar {
       -webkit-transform: scale(1);
+    }
+    .mentor-gif {
+      opacity: 1;
     }
   }
 

@@ -8,7 +8,7 @@
 <div class="container">
 
   <div class="peoples">
-    <h2 class="page-header">Featured Mentors</h2>
+    <h2 class="page-header">Fellows</h2>
 
     <div class="row text-center">
 
@@ -17,6 +17,7 @@
           <img class="laurel laurel-left" src="/img/laurel-leaves-left.svg">
           <img class="laurel laurel-right" src="/img/laurel-leaves-right.svg">
           <img ng-src="{{mentor.avatar}}" alt="{{mentor.name}}" class="img-circle img-mentor-avatar">
+          <div class="mentor-gif" style="background-image:url({{mentor.gif}})"></div>
         </ex-avatar>
 
         <p>{{mentor.name}}<br>
@@ -35,23 +36,19 @@
 
 </div>
 
-
-<div ng-hide="kits.length" class="well well-create-kit text-center">
-  <div class="container">
-
-    <button class="btn btn-primary btn-create-kit"><span class="fa fa-plus"></span></button>
-    <p class="text-muted">There are no kits yet. <a href="#">submit some</a>!</p>
-  </div>
-</div>
-
-<div ng-show="kits.length">
+<div>
 
   <div class="container">
 
     <h2 class="page-header">Kits</h2>
 
+    <div ng-hide="kits.length" class="well well-create-kit text-center">
+      <button class="btn btn-default btn-create-kit"><span class="fa fa-plus"></span></button>
+      <p class="text-muted">There are no staff picks yet. <a href="#">submit some</a>!</p>
+    </div>
+
     <tabset>
-      <tab heading="Staff picks">
+      <tab ng-if="kits.length" heading="Staff picks">
         <div class="row">
           <div ng-repeat="kit in kits" class="col-md-4 col-lg-3">
             <div class="thumbnail">
@@ -91,12 +88,26 @@
           </div>
         </div>
       </tab>
+      <tab heading="Beginner">
+        <div class="row">
+        </div>
+      </tab>
+      <tab heading="Intermediate">
+        <div class="row">
+        </div>
+      </tab>
+      <tab heading="Advanced">
+        <div class="row">
+        </div>
+      </tab>
      </tabset>
 
-    <p><button class="pull-right btn btn-primary">
-      <span class="fa fa-plus"></span> Add a kit
-    </button></p>
+     <p><button class="pull-right btn btn-primary">
+         <span class="fa fa-plus"></span> Add a kit
+       </button></p>
+
   </div>
+
 
 </div>
 
