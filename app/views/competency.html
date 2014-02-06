@@ -12,18 +12,23 @@
 
     <div class="row text-center">
 
-      <div ng-repeat="mentor in mentors" class="col-sm-3">
-        <img ng-src="{{mentor.avatar}}" alt="{{mentor.name}}" class="img-circle img-mentor-avatar">
+      <div ng-repeat="mentor in mentors" class="col-xs-4 col-sm-3">
+        <ex-avatar class="mentor">
+          <img class="laurel laurel-left" src="/img/laurel-leaves-left.svg">
+          <img class="laurel laurel-right" src="/img/laurel-leaves-right.svg">
+          <img ng-src="{{mentor.avatar}}" alt="{{mentor.name}}" class="img-circle img-mentor-avatar">
+        </ex-avatar>
+
         <p>{{mentor.name}}<br>
         <span class="text-muted">{{mentor.title}}</span></p>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-xs-4 col-sm-3">
         <div class="mentor-circle-btn">
-          Nominate
+          <span>Nominate</span>
+          <img src="/img/brett.jpg">
         </div>
       </div>
-
     </div>
 
   </div>
