@@ -92,9 +92,10 @@ angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap', 'exploreAp
       {
         name: 'Matt Thompson',
         avatar: 'img/openmatt.jpg',
+        gif: 'https://wmprofile-service-production.s3.amazonaws.com/gifs/ZAGFs14aDMiCRhICFSKqF7ft.gif',
         title: 'Master Story Teller',
         handle: '@openmatt'
-      },
+      }
     ]
   })
   .config(function($routeProvider) {
