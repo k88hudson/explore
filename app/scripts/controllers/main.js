@@ -1,17 +1,21 @@
 'use strict';
 
-angular.module('exploreApp')
+angular
+  .module('exploreApp')
   .controller('navigationController', function ($scope, $location, $routeParams, personaService, Slug, SITE) {
     $scope.isCollapsed = true;
     $scope.skills = SITE.skills;
 
-    $scope.isActive = function (skill) {
-      return Slug.slugify(skill) === $routeParams.id;
+    $scope.isActive = function (name) {
+      if (name[0] === '/') {
+        return name === $location.path();
+      }
+      return Slug.slugify(name) === $routeParams.id;
     };
 
     $scope.isUnselected = function () {
       return window.location.hash === '#/';
-    }
+    };
   })
   .controller('mainController', function ($scope) {
 
@@ -22,5 +26,8 @@ angular.module('exploreApp')
     })[0];
   })
   .controller('eventsController', function ($scope) {
+    //blah
+  })
+  .controller('addController', function ($scope) {
     //blah
   });

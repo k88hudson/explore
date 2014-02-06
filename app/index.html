@@ -52,6 +52,11 @@
           style="background-color: {{ skill.colour }}">
           <a href="#/competencies/{{ skill.name | slugify }}">{{ skill.name }}</a>
         </li>
+        <li
+          ng-class="{ active : isActive('/add') }"
+          style="background-color: #000">
+          <a href="#/add"><span class="fa fa-plus"></span> Add your own</a>
+        </li>
       </ul>
     </div>
 
