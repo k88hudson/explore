@@ -21,9 +21,16 @@ angular
 
   })
   .controller('competencyController', function ($scope, $location, $routeParams, Slug, SITE) {
+
+    $scope.slug = $routeParams.id;
+
     $scope.skill = SITE.skills.filter(function (item) {
-      return Slug.slugify(item.name) === $routeParams.id;
+      return Slug.slugify(item.name) === $scope.slug;
     })[0];
+
+    $scope.kits = SITE.kits[$scope.slug];
+
+
   })
   .controller('eventsController', function ($scope) {
     //blah

@@ -64,10 +64,16 @@ angular.module('exploreApp', ['ngRoute', 'slugifier', 'ui.bootstrap'])
       description: 'Helping to keep the web democratic and universally accessible'
     }],
     kits: {
-      'Navigation': [{
-        title: 'I iz kit'
+      'navigation': [{
+        title: 'What is a URL?',
+        description: 'An introduction to the structure of URLs and finding resources on the well',
+        author: '@secretrobotron',
+        authorUrl: 'https://twitter.com/secretrobotron'
       }, {
-        title: 'I iz also kit'
+        title: 'Finding and using links',
+        description: 'Find links on a web page using Watson and learn how to evaluate them',
+        author: '@secretrobotron',
+        authorUrl: 'https://twitter.com/secretrobotron'
       }]
     }
   })
